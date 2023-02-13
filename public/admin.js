@@ -14,8 +14,8 @@ function renderBook(book){
     let qtyInput = document.createElement("input")
     let saveBtn = document.createElement("button")
     
-    qtyInput.setAttribute(value , `${book.quantity}`)
-    listItem.innerHTML = `${book.tittle}`
+    qtyInput.setAttribute("value" , `${book.quantity}`)
+    listItem.innerHTML = `${book.title}`
     saveBtn.textContent = "Save"
 
     saveBtn.addEventListener('click', () => {
