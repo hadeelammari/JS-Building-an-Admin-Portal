@@ -10,24 +10,24 @@ async function main() {
 function renderBook(book){
     let root= document.getElementById("root")
     let listItem= document.createElement("li")
-    let qtyImput= document.createElement("imput")
+    let qtyInput= document.createElement("input")
     let newbtn=document.createElement("button")
    
    
     listItem.innerHTML= `${book.title}`
-    qtyImput.setAttribute('value',`${book.quantity}`)
+    qtyInput.setAttribute('value',`${book.quantity}`)
    
-   
+    newbtn.textContent = 'Save';
    
     newbtn.addEventListener('click',()=>{
-        fetch('http://localhost:3001/updateBooks',{
+        fetch('http://localhost:3001/updateBook',{
         method:"patch",
         Headers:{
             'content-type':'application/jason'
         },
             body: JSON.stringify({
-                id:book.id,
-                quantity: qtyImput.value
+                'id': book.id,
+                'quantity': qtyInput.value
             })
             
         })
