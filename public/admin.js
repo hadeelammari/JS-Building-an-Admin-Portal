@@ -12,7 +12,7 @@ function renderBook(book) {
 
     let root= document.getElementById("root")
     let listItem= document.createElement ("li")
-    let qtyInput = docuemnt.createElement("input")
+    let qtyInput = document.createElement("input")
     let saveBtn = document.createElement("button")
 
 
@@ -21,7 +21,7 @@ function renderBook(book) {
     qtyInput.setAttribute('value', `${book.quantity}`)
     saveBtn.textContent= "save "
 
-    saveBtn.addEventListener("list", () => {
+    saveBtn.addEventListener("click", () => {
             fetch('http://localhost:3001/updateBook', {
                 method: "PATCH",
                 headers: {
