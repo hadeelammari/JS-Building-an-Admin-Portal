@@ -27,10 +27,11 @@ async function updateInventory(bookId) {
     const inventory = document.getElementById(`inventory-${bookId}`).value;
     console.log(`Updating inventory for book ${bookId} to ${inventory}`);
 
-    let response = await fetch(`http://localhost:3001/listbooks/${bookId}`, {
+    let response = await fetch(`http://localhost:3001/updateBook`, {
     method: 'PATCH',
     headers: { 'Content-type': 'application/json' },
     body: JSON.stringify({
+        id: bookId,
         'quantity': inventory
     })
     });
